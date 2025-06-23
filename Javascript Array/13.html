@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Add & Display</title>
+</head>
+<body>
+  <h3>Enter a number:</h3>
+  <input type="number" id="numberInput" placeholder="Enter number" />
+  <button onclick="addItem()">Add</button>
+  <button onclick="displayItems()">Display</button>
+
+  <div id="output" style="margin-top: 20px;"></div>
+
+  <script>
+    const numbers = [];
+
+    function addItem() {
+      const input = document.getElementById("numberInput").value;
+      if (input !== "") {
+        numbers.push(Number(input));
+        document.getElementById("numberInput").value = ""; // clear input
+      }
+    }
+
+    function displayItems() {
+      const outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = ""; // Clear previous output
+
+      if (numbers.length === 0) {
+        outputDiv.innerText = "Array is empty.";
+        return;
+      }
+
+      numbers.forEach((num, index) => {
+        outputDiv.innerHTML += `Element ${index} = ${num}<br>`;
+      });
+    }
+  </script>
+</body>
+</html>
