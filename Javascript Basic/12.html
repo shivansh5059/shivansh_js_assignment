@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+  <h2>Get Current Page URL</h2>
+
+  <button onclick="showURL()">Get URL</button>
+
+  <p id="result"></p>
+
+  <script>
+    function showURL() {
+      const currentURL = window.location.href;
+      
+      document.getElementById("result").innerText = `Current URL is: ${currentURL}`;
+    }
+  </script>
+
+</body>
+</html>
